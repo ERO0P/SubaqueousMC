@@ -1,0 +1,113 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: black;
+}
+body {
+    background-color: darkgray;
+    margin: auto;
+    overflow-x: hidden;
+}
+nav {
+    display: flex;
+    cursor: pointer;
+    background-color: aqua;
+    height: 8vh;
+    align-items: center;
+}
+.logo {
+    display: inline-flex;
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: 0.1em;
+    text-shadow: 0px 4px 4px rgba(0, 73, 16, 0.25);
+    margin: auto;
+}
+.nav-links {
+    display: inline-flex;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 31px;
+    letter-spacing: 0.1em;
+    margin-left: auto;
+    margin-right: 15px;
+}
+.nav-links li {
+    margin-inline: 15px;
+}
+.nav-links a {
+    text-decoration: none;
+}
+.nav-links a:hover {
+    text-decoration: none;
+    color: white;
+}
+.burger {
+    display: none;
+}
+.burger div {
+    width: 33px;
+    height: 4px;
+    background-color: white;
+    margin: 7px; 
+}
+@media screen and (max-width:786px){
+    .nav-links {
+        position: absolute;
+        height: 100vh;
+        top: 4vh; 
+        right: 0px;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 39%;
+        transform: translatex(110%);
+        transition: transform 0.8s ease-in;
+        overflow-x: hidden;
+        
+    }
+    .logo {
+        margin-left: 50px;
+    }
+    .burger {
+        display: block;
+        margin-right: 25px;
+        z-index: 1;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .nav-active {
+        transform: translateX(10%)
+    }
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.toggle .line1 {
+    transform:  rotate(-45deg) translate(-5px,6px);
+    margin: 4px;
+}
+.toggle .line2 {
+    opacity: 0;
+    margin: 4px;
+}
+.toggle .line3 { 
+    transform: rotate(45deg) translate(-5px,-6px);
+    margin: 4px;
+}
